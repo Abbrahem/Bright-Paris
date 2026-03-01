@@ -1,9 +1,5 @@
 window.addEventListener('DOMContentLoaded', function() {
-    const languageSelected = localStorage.getItem('languageSelected');
-    
-    if (!languageSelected) {
-        showLanguageSelection();
-    }
+    showLanguageSelection();
     
     initScrollAnimations();
     
@@ -66,11 +62,8 @@ function selectLanguage(lang) {
                 popup: 'custom-swal',
                 confirmButton: 'swal-confirm-btn'
             }
-        }).then(() => {
-            localStorage.setItem('languageSelected', 'true');
         });
     } else {
-        localStorage.setItem('languageSelected', 'true');
         Swal.close();
     }
 }
@@ -82,6 +75,23 @@ document.getElementById('orderForm').addEventListener('submit', function(e) {
     const address = document.getElementById('address').value;
     const phone1 = document.getElementById('phone1').value;
     const phone2 = document.getElementById('phone2').value;
+    
+    if (phone1 === phone2) {
+        Swal.fire({
+            icon: 'error',
+            title: 'خطأ في البيانات',
+            html: '<p style="font-size: 1.2rem;">يرجى إدخال رقم موبايل مختلف للتأكيد<br><br>Please enter a different phone number for confirmation</p>',
+            background: '#000000',
+            color: '#ffffff',
+            confirmButtonText: 'حسناً / OK',
+            confirmButtonColor: '#D4AF37',
+            customClass: {
+                popup: 'custom-swal',
+                confirmButton: 'swal-confirm-btn'
+            }
+        });
+        return;
+    }
     
     const message = `
 🌟 *طلب جديد من موقع Bright Paris* 🌟
@@ -101,7 +111,7 @@ document.getElementById('orderForm').addEventListener('submit', function(e) {
     
     const encodedMessage = encodeURIComponent(message);
     
-    const whatsappNumber = '201286633474';
+    const whatsappNumber = '201033654548';
     
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     
