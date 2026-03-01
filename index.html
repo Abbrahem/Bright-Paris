@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Paris - علاج تساقط الشعر الاحترافي</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="modal fade" id="languageModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white border-gold">
+                <div class="modal-header border-gold">
+                    <h5 class="modal-title w-100 text-center">اختر اللغة / Choose Language</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="d-grid gap-3">
+                        <button class="btn btn-outline-gold btn-lg" onclick="selectLanguage('ar')">
+                            <i class="fas fa-globe me-2"></i> العربية
+                        </button>
+                        <button class="btn btn-outline-gold btn-lg" onclick="selectLanguage('en')">
+                            <i class="fas fa-globe me-2"></i> English Language
+                        </button>
+                        <button class="btn btn-outline-gold btn-lg" onclick="selectLanguage('fr')">
+                            <i class="fas fa-globe me-2"></i> Langue Française
+                        </button>
+                        <button class="btn btn-outline-gold btn-lg" onclick="selectLanguage('ru')">
+                            <i class="fas fa-globe me-2"></i> Русский
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a href="#" class="logo-link">
+                <img src="images/logo.jpg" alt="Bright Paris Logo" class="logo-img">
+            </a>
+            
+            <div class="navbar-brand-wrapper">
+                <span class="brand-name">Bright Paris</span>
+            </div>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="navbar-collapse d-none d-lg-flex">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-bars"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#hero">الرئيسية</a></li>
+                            <li><a class="dropdown-item" href="#about">عن المنتج</a></li>
+                            <li><a class="dropdown-item" href="#order">اطلب الآن</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">القائمة</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="offcanvas-menu">
+                <li><a href="#hero" data-bs-dismiss="offcanvas">الرئيسية</a></li>
+                <li><a href="#about" data-bs-dismiss="offcanvas">عن المنتج</a></li>
+                <li><a href="#order" data-bs-dismiss="offcanvas">اطلب الآن</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-lg-10 mx-auto text-center hero-content">
+                    <h1 class="hero-title animate-fade-in">Bright Paris</h1>
+                    <div class="hero-divider mx-auto"></div>
+                    <h2 class="hero-subtitle animate-fade-in-delay">بديل البلازما والميزوثيرابي في منزلك</h2>
+                    <p class="hero-description animate-fade-in-delay-2">علاج احترافي لتساقط الشعر بتقنية متقدمة وبتكلفة أقل</p>
+                    <a href="#order" class="btn btn-gold btn-hero animate-bounce">
+                        <i class="fas fa-shopping-cart me-2"></i> اطلب الآن
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">عن المنتج</h2>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="info-card" data-aos="fade-up">
+                        <div class="card-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>استخدام منزلي سهل</h3>
+                        <p>أمبولات برايت باريس هي بديل لجلسات البلازما والميزوثيرابي المكلفة للشعر داخل العيادات. عمل الجلسة بسهولة في البيت دون عناء السفر وبتكلفة أقل</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <h3>محتويات العبوة</h3>
+                        <p>العلبة تحتوي على 20 فيال يكفي لعشرين جلسة في البيت بمعدل جلسة كل أسبوعين، يعني تكفي عام كامل تقريباً مع ديرمارولر هدية</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card-icon">
+                            <i class="fas fa-tag"></i>
+                        </div>
+                        <h3>السعر</h3>
+                        <p class="price-highlight">1300 جنيه مصري</p>
+                        <p>للعلبة الكاملة تكفي عشرين جلسة مع ديرمارولر هدية</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card" data-aos="fade-right">
+                        <div class="card-icon">
+                            <i class="fas fa-hand-holding-medical"></i>
+                        </div>
+                        <h3>طريقة الاستخدام</h3>
+                        <p>فقط تضع محتويات الفيال على فروة الرأس مع التدليك واستخدام الديرمارولر المرفقة معها. موجود مع العبوة إرشادات طريقة الاستعمال</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="info-card" data-aos="fade-left">
+                        <div class="card-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>آمن وطبيعي</h3>
+                        <p>المكونات لا تحتوي على المينوكسيديل أو الفينسترايد أو الديوتاستيريد أو أي هرمونات، وبالتالي لا تسبب أي مشكلة عند التوقف عن استعمالها</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ingredients-section mt-5">
+                <div class="info-card" data-aos="zoom-in">
+                    <div class="card-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>المكونات الطبيعية</h3>
+                    <div class="ingredients-list">
+                        <p>Phyllanthus Emblica Fruit Extract, Trigonella Foenum-Graecum Seed Oil, Scutellaria Baicalensis Root Extract, Gluconolactone, Triticum Vulgare Germ Extract, Caffeine, Panthenol, Lysine, Glycerin, Niacinamide, Carnitine, Arginine, Tyrosine, Apigenin, Zinc Chloride, Melaleuca Alternifolia Leaf Oil, Camellia Sinensis Leaf Extract, Trifolium Pratense Flower Extract, Thymus Vulgaris Extract, Capsicum Annuum Fruit Extract, Salicylic Acid, Urea, Citrullus Colocynthis Fruit Extract, Ziziphus Spina-Christi Leaf Extract, Vitis Vinifera Stem Extract, Bis-Aminopropyl Diglycol Dimalate, Glycine, Cetearyl Alcohol, Glyceryl Stearate, Ricinus Communis Seed Oil, Oleanolic Acid, Prunus Amygdalus Dulcis Oil, Rosmarinus Officinalis Extract, Citric Acid, Phenoxyethanol</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="order-section py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">اطلب الآن</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
+                    <div class="product-image-container">
+                        <img src="images/hair.jpg" alt="Bright Paris Product" class="img-fluid product-image">
+                    </div>
+                </div>
+                
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="order-form-container">
+                        <div class="price-banner mb-4">
+                            <h3 class="text-center mb-0">السعر: <span class="price-highlight">1300 جنيه مصري</span></h3>
+                            <p class="text-center mb-0 mt-2">العلبة الكاملة - 20 فيال + ديرمارولر هدية</p>
+                        </div>
+                        
+                        <form id="orderForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">الاسم الكامل</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="address" class="form-label">العنوان بالتفصيل</label>
+                                <textarea class="form-control" id="address" rows="3" required></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="phone1" class="form-label">رقم الموبايل الأول</label>
+                                <input type="tel" class="form-control" id="phone1" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="phone2" class="form-label">رقم موبايل آخر (للتأكيد)</label>
+                                <input type="tel" class="form-control" id="phone2" required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-gold btn-lg w-100 py-3">
+                                <i class="fab fa-whatsapp me-2"></i> أرسل الطلب عبر واتساب
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h2 class="footer-brand mb-4">Bright Paris</h2>
+                    <p class="footer-desc mb-4">علاج احترافي لتساقط الشعر</p>
+                    <div class="footer-links mb-4">
+                        <a href="#hero" class="footer-link">الرئيسية</a>
+                        <span class="separator">|</span>
+                        <a href="#about" class="footer-link">عن المنتج</a>
+                        <span class="separator">|</span>
+                        <a href="#order" class="footer-link">اطلب الآن</a>
+                    </div>
+                    <div class="footer-copyright">
+                        <p class="mb-0">Bright Paris</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
