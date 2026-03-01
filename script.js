@@ -2,8 +2,7 @@ window.addEventListener('DOMContentLoaded', function() {
     const languageSelected = localStorage.getItem('languageSelected');
     
     if (!languageSelected) {
-        const languageModal = new bootstrap.Modal(document.getElementById('languageModal'));
-        languageModal.show();
+        showLanguageSelection();
     }
     
     initScrollAnimations();
@@ -22,15 +21,59 @@ window.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+function showLanguageSelection() {
+    Swal.fire({
+        title: 'اختر اللغة / Choose Language',
+        html: `
+            <div style="display: grid; gap: 1rem; margin-top: 1rem;">
+                <button onclick="selectLanguage('ar')" class="swal-lang-btn">
+                    <i class="fas fa-globe"></i> العربية
+                </button>
+                <button onclick="selectLanguage('en')" class="swal-lang-btn">
+                    <i class="fas fa-globe"></i> English Language
+                </button>
+                <button onclick="selectLanguage('fr')" class="swal-lang-btn">
+                    <i class="fas fa-globe"></i> Langue Française
+                </button>
+                <button onclick="selectLanguage('ru')" class="swal-lang-btn">
+                    <i class="fas fa-globe"></i> Русский
+                </button>
+            </div>
+        `,
+        background: '#000000',
+        color: '#D4AF37',
+        showConfirmButton: false,
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        customClass: {
+            popup: 'language-popup',
+            title: 'language-title'
+        }
+    });
+}
+
 function selectLanguage(lang) {
     if (lang !== 'ar') {
-        alert('This language is not available in your country.\nهذه اللغة غير متاحة في بلدك.');
+        Swal.fire({
+            icon: 'warning',
+            title: 'Language Not Available',
+            html: '<p style="font-size: 1.2rem;">This language is not available in your country.<br>هذه اللغة غير متاحة في بلدك.</p>',
+            background: '#000000',
+            color: '#ffffff',
+            confirmButtonText: 'حسناً / OK',
+            confirmButtonColor: '#D4AF37',
+            customClass: {
+                popup: 'custom-swal',
+                confirmButton: 'swal-confirm-btn'
+            }
+        }).then(() => {
+            localStorage.setItem('languageSelected', 'true');
+            Swal.close();
+        });
+    } else {
+        localStorage.setItem('languageSelected', 'true');
+        Swal.close();
     }
-    
-    localStorage.setItem('languageSelected', 'true');
-    
-    const languageModal = bootstrap.Modal.getInstance(document.getElementById('languageModal'));
-    languageModal.hide();
 }
 
 document.getElementById('orderForm').addEventListener('submit', function(e) {
@@ -62,11 +105,26 @@ document.getElementById('orderForm').addEventListener('submit', function(e) {
     const whatsappNumber = '201234567890';
     
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-    window.open(whatsappURL, '_blank');
+    
+    Swal.fire({
+        icon: 'success',
+        title: 'تم إرسال الطلب!',
+        html: '<p style="font-size: 1.2rem;">جاري تحويلك إلى واتساب لإتمام الطلب...</p>',
+        background: '#000000',
+        color: '#ffffff',
+        confirmButtonText: 'فتح واتساب',
+        confirmButtonColor: '#D4AF37',
+        timer: 3000,
+        timerProgressBar: true,
+        customClass: {
+            popup: 'custom-swal',
+            confirmButton: 'swal-confirm-btn'
+        }
+    }).then(() => {
+        window.open(whatsappURL, '_blank');
+    });
     
     this.reset();
-    
-    alert('جاري تحويلك إلى واتساب لإتمام الطلب...');
 });
 
 function initScrollAnimations() {
