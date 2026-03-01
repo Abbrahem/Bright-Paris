@@ -32,12 +32,14 @@ body {
     width: 100%;
     max-width: 1320px;
     position: relative;
+    min-height: 70px;
 }
 
 .logo-link {
     display: flex;
     align-items: center;
     z-index: 10;
+    flex-shrink: 0;
 }
 
 .navbar-brand-wrapper {
@@ -48,16 +50,19 @@ body {
     justify-content: center;
     align-items: center;
     pointer-events: none;
+    z-index: 5;
 }
 
 .navbar-collapse {
     display: flex;
     justify-content: flex-end;
     z-index: 10;
+    flex-shrink: 0;
 }
 
 .navbar-toggler {
     z-index: 10;
+    flex-shrink: 0;
 }
 
 .logo-img {
@@ -114,8 +119,8 @@ body {
     color: var(--gold) !important;
     transition: all 0.3s;
     font-weight: 600;
-    font-size: 1.5rem;
-    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+    padding: 0.5rem 0.8rem;
 }
 
 .nav-link:hover {
@@ -124,7 +129,7 @@ body {
 }
 
 .nav-link i {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
 .navbar-toggler {
@@ -637,17 +642,19 @@ body {
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 1rem 0;
+        padding: 0.8rem 0;
     }
     
     .navbar .container {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        min-height: 60px;
     }
     
     .logo-link {
         order: 1;
+        margin-left: 0.5rem;
     }
     
     .navbar-brand-wrapper {
@@ -656,12 +663,14 @@ body {
         order: 2;
         flex: 1;
         justify-content: center;
-        margin: 0 1rem;
+        margin: 0 0.5rem;
+        pointer-events: auto;
     }
     
     .navbar-toggler {
         display: block;
         order: 3;
+        margin-right: 0.5rem;
     }
     
     .navbar-collapse {
@@ -669,16 +678,16 @@ body {
     }
     
     .logo-img {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
     }
     
     .brand-name {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     
     .hero-section {
-        padding-top: 100px;
+        padding-top: 90px;
     }
     
     .hero-title {
@@ -775,16 +784,25 @@ body {
 
 @media (max-width: 576px) {
     .brand-name {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     
     .logo-img {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
     }
     
     .navbar-brand-wrapper {
-        margin: 0 0.5rem;
+        margin: 0 0.3rem;
+    }
+    
+    .navbar-toggler {
+        padding: 0.4rem 0.6rem;
+        margin-right: 0.3rem;
+    }
+    
+    .logo-link {
+        margin-left: 0.3rem;
     }
     
     .hero-title {
@@ -864,12 +882,16 @@ body {
 
 @media (max-width: 400px) {
     .brand-name {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     
     .logo-img {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .navbar .container {
+        min-height: 50px;
     }
     
     .hero-title {
@@ -899,17 +921,19 @@ body {
     border: 3px solid var(--gold) !important;
     border-radius: 20px !important;
     font-family: 'Cairo', sans-serif !important;
+    max-width: 500px !important;
 }
 
 .language-title {
-    font-size: 1.8rem !important;
+    font-size: 1.5rem !important;
     font-weight: 800 !important;
     text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+    line-height: 1.6 !important;
 }
 
 .swal-lang-btn {
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
+    padding: 0.9rem 1.5rem;
+    font-size: 1.1rem;
     font-weight: 700;
     background: rgba(212, 175, 55, 0.1);
     border: 2px solid var(--gold);
@@ -935,12 +959,13 @@ body {
     border: 3px solid var(--gold) !important;
     border-radius: 20px !important;
     font-family: 'Cairo', sans-serif !important;
+    max-width: 500px !important;
 }
 
 .swal-confirm-btn {
-    font-size: 1.2rem !important;
+    font-size: 1.1rem !important;
     font-weight: 700 !important;
-    padding: 0.8rem 2rem !important;
+    padding: 0.7rem 1.8rem !important;
     border-radius: 50px !important;
     font-family: 'Cairo', sans-serif !important;
 }
@@ -968,4 +993,29 @@ body {
 
 .swal2-timer-progress-bar {
     background: var(--gold) !important;
+}
+
+@media (max-width: 576px) {
+    .language-popup, .custom-swal {
+        max-width: 90% !important;
+        margin: 0 auto !important;
+    }
+    
+    .language-title {
+        font-size: 1.2rem !important;
+    }
+    
+    .swal-lang-btn {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .swal2-html-container {
+        font-size: 0.95rem !important;
+    }
+    
+    .swal-confirm-btn {
+        font-size: 1rem !important;
+        padding: 0.6rem 1.5rem !important;
+    }
 }
