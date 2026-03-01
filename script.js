@@ -57,7 +57,7 @@ function selectLanguage(lang) {
         Swal.fire({
             icon: 'warning',
             title: 'Language Not Available',
-            html: '<p style="font-size: 1.2rem;">This language is not available in your country.<br>هذه اللغة غير متاحة في بلدك.</p>',
+            html: '<p style="font-size: 1.3rem; line-height: 1.8;">This language is not available in your country.<br><br>هذه اللغة غير متاحة في بلدك.</p>',
             background: '#000000',
             color: '#ffffff',
             confirmButtonText: 'حسناً / OK',
@@ -68,7 +68,6 @@ function selectLanguage(lang) {
             }
         }).then(() => {
             localStorage.setItem('languageSelected', 'true');
-            Swal.close();
         });
     } else {
         localStorage.setItem('languageSelected', 'true');
